@@ -1,6 +1,8 @@
 import java.math.BigDecimal;
+import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 public class Funcionario extends Pessoa {
     private BigDecimal salario;
@@ -33,9 +35,15 @@ public class Funcionario extends Pessoa {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         String dataFormatada = getDataNascimento().format(formatter);
 
+        // Formata o salário com separador de milhar e vírgula como decimal
+        NumberFormat nf = NumberFormat.getNumberInstance(new Locale("pt", "BR"));
+        nf.setMinimumFractionDigits(2);
+        nf.setMaximumFractionDigits(2);
+        String salarioFormatado = nf.format(salario);
+
         System.out.println("Nome: " + getNome());
         System.out.println("Data de Nascimento: " + dataFormatada);
-        System.out.println("Salário R$: " + salario);
+        System.out.println("Salário R$: " + salarioFormatado);
         System.out.println("Função: " + funcao + "\n");
     }
 }
