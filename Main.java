@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        // Para simplificar e evitar ter de criar um Database com tabelas e fazer conexão com DB. Foi utilizado apenas esta Lista com dados Mockados.
         List<Funcionario> funcionarios = new ArrayList<>();
         funcionarios.add(new Funcionario("Maria", LocalDate.of(2000, 10, 18), new BigDecimal("2009.44"), "Operador"));
         funcionarios.add(new Funcionario("João", LocalDate.of(1990, 5, 12), new BigDecimal("2284.38"), "Operador"));
@@ -44,13 +45,33 @@ public class Main {
 
         f1.exibirInfo();
 
-        // 3.1 Inserir todos os funcionários, na mesma ordem e informações da tabela
-        // acima.
+        // 3.1 Inserir todos os funcionários, na mesma ordem e informações da tabela acima.
         FakeJira f31 = new FakeJira(31);
         f31.exibirDescricao();
 
         for (Funcionario f : funcionarios) {
             f.exibirInfo();
+        }
+
+        // 3.2 Remover o funcionário “João” da lista.
+        // IA do Itau demitiu o João por click rate baixo :( removido da lista.
+        FakeJira f32 = new FakeJira(32);
+        f32.exibirDescricao();
+
+        funcionarios.removeIf(f -> f.getNome().equals("João"));
+
+        /*
+         * Observação eu sei que aqui eu fiz código duplicado a mesma iteração o for
+         * aparece aqui embaixo e lá encima na linha 52 porém eu fiz isso
+         * apenas para ser possivel ver o programa passando por todas etapas solicitadas
+         * pelo site da Gupy porque achei melhor o aplicativo
+         * exibir todas etapas que o avaliador ter de baixar o commit 1.0 para testar o
+         * requisito 1.0 depois ele teria de ir no commit 2.0 baixar para testar
+         * o requisito 2.0 e assim em diante, preferi que a versão final do programa
+         * exibisse todos os testes no console de uma vez facilitando o Code Review.
+         */
+        for (Funcionario f : funcionarios) {
+        f.exibirInfo();
         }
     }
 }
