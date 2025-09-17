@@ -20,12 +20,12 @@ public class FakeJira {
                 System.out.println("PDB: 3.1 : Inserir todos os funcionários, na mesma ordem e informações da tabela acima.");
                 break;
             case 32:
-                System.out.println("PDB: 3.2 : Remover o funcionário “João” da lista.");
+                System.out.println("PDB: 3.2 : Remover o funcionário João da lista.");
                 break;
             case 33:
                 System.out.println("PDB: 3.3 : Imprimir todos os funcionários com todas suas informações:\n" +
-                                   "     • data no formato dd/mm/aaaa;\n" +
-                                   "     • valores numéricos com separador de milhar como ponto e decimal como vírgula.");
+                                   "      data no formato dd/mm/aaaa;\n" +
+                                   "      valores numéricos com separador de milhar como ponto e decimal como vírgula.");
                 break;
             case 34:
                 System.out.println("PDB: 3.4 : Atualizar a lista de funcionários com 10% de aumento de salário.");
