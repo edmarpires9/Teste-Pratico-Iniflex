@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.time.Period;
 
 public class Funcionario extends Pessoa {
     private BigDecimal salario;
@@ -60,5 +61,27 @@ public class Funcionario extends Pessoa {
                 f.exibirInfo();
             }
         }
+    }
+
+    // Método para imprimir o funcionário com a maior idade
+    public static void funcionarioMaisVelho(List<Funcionario> lista) {
+        if (lista.isEmpty()) {
+            System.out.println("Lista de funcionários vazia.");
+            return;
+        }
+
+        Funcionario maisVelho = lista.get(0);
+        for (Funcionario f : lista) {
+            if (f.getDataNascimento().isBefore(maisVelho.getDataNascimento())) {
+                maisVelho = f;
+            }
+        }
+
+        // Calcula a idade
+        int idade = Period.between(maisVelho.getDataNascimento(), LocalDate.now()).getYears();
+
+        System.out.println("Funcionário mais velho:");
+        System.out.println("Nome: " + maisVelho.getNome());
+        System.out.println("Idade: " + idade + " anos\n");
     }
 }

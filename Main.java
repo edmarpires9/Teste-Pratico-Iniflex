@@ -120,5 +120,11 @@ public class Main {
         f38.exibirDescricao();
         // Imprime aniversariantes de outubro e dezembro
         Funcionario.aniversariantesOutubroDezembro(funcionarios);
+
+        //3.9 Imprimir o funcionário com a maior idade, exibir os atributos: nome e idade.
+        FakeJira f39 = new FakeJira(39);
+        f39.exibirDescricao();
+
+        Funcionario.funcionarioMaisVelho(funcionarios);
     }
 }
