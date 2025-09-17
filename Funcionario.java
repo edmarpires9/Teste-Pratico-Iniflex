@@ -51,4 +51,14 @@ public class Funcionario extends Pessoa {
         return lista.stream()
                 .collect(Collectors.groupingBy(Funcionario::getFuncao));
     }
+
+    public static void aniversariantesOutubroDezembro(List<Funcionario> lista) {
+        System.out.println("Funcionários que fazem aniversário nos meses 10 e 12:\n");
+        for (Funcionario f : lista) {
+            int mes = f.getDataNascimento().getMonthValue();
+            if (mes == 10 || mes == 12) {
+                f.exibirInfo();
+            }
+        }
+    }
 }

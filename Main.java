@@ -86,7 +86,7 @@ public class Main {
             f.exibirInfo();
         }
 
-        // 3.4 – Os funcionários receberam 10% de aumento de salário, atualizar a lista
+        // 3.4 Os funcionários receberam 10% de aumento de salário, atualizar a lista
         // de funcionários com novo valor.
         FakeJira f34 = new FakeJira(34);
         f34.exibirDescricao();
@@ -98,9 +98,12 @@ public class Main {
             f.exibirInfo();
         }
 
-        // 3.5 – Agrupar os funcionários por função em um MAP, sendo a chave a “função” e o valor a “lista de funcionários”.
+        // 3.5 Agrupar os funcionários por função em um MAP, sendo a chave a “função” e o valor a “lista de funcionários”.
         FakeJira f35 = new FakeJira(35);
         f35.exibirDescricao();
+        FakeJira f36 = new FakeJira(36);
+        f36.exibirDescricao();
+        //No gupy foram do 3.6 para 3.8 não teve 3.7.
         
         // Agrupa por função
         Map<String, List<Funcionario>> agrupados = Funcionario.agruparPorFuncao(funcionarios);
@@ -111,5 +114,11 @@ public class Main {
                 f.exibirInfo();
             }
         }
+
+        // 3.8 Imprimir os funcionários que fazem aniversário no mês 10 e 12.
+        FakeJira f38 = new FakeJira(38);
+        f38.exibirDescricao();
+        // Imprime aniversariantes de outubro e dezembro
+        Funcionario.aniversariantesOutubroDezembro(funcionarios);
     }
 }
