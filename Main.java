@@ -2,6 +2,7 @@ import java.time.LocalDate;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
@@ -95,6 +96,20 @@ public class Main {
             f.setSalario(f.getSalario().multiply(new BigDecimal("1.1")));
             // Exibe as informações já com o salário atualizado
             f.exibirInfo();
+        }
+
+        // 3.5 – Agrupar os funcionários por função em um MAP, sendo a chave a “função” e o valor a “lista de funcionários”.
+        FakeJira f35 = new FakeJira(35);
+        f35.exibirDescricao();
+        
+        // Agrupa por função
+        Map<String, List<Funcionario>> agrupados = Funcionario.agruparPorFuncao(funcionarios);
+
+        // Exibe o resultado
+        for (String funcao : agrupados.keySet()) {
+            for (Funcionario f : agrupados.get(funcao)) {
+                f.exibirInfo();
+            }
         }
     }
 }
