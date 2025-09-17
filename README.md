@@ -1,5 +1,7 @@
 # Projeto Teste-Pratico-Iniflex
 
+[Assista ao vídeo](https://youtu.be/LPgPB6LE6mg)
+
 Este projeto é um exemplo simples em **Java** a indentação do código foi feita no VS Code → com a extensão "Language Support for Java(TM) by Red Hat" + "Prettier";
 O projeto consiste em manipular uma lista de varias formas diferentes. A lista é bem simples contendo: 
 - `nome` (String)  
