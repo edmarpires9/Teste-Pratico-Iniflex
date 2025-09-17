@@ -6,6 +6,7 @@ public class FakeJira {
     }
 
     public void exibirDescricao() {
+        System.out.println("===============================================================================");
         switch (PDB) {
             case 1:
                 System.out.println("PDB: \"1.0\" : Classe Pessoa com os atributos: nome (String) e data nascimento (LocalDate).");

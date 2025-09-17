@@ -5,7 +5,8 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        // Para simplificar e evitar ter de criar um Database com tabelas e fazer conexão com DB. Foi utilizado apenas esta Lista com dados Mockados.
+        // Para simplificar e evitar ter de criar um Database com tabelas e fazer
+        // conexão com DB. Foi utilizado apenas esta Lista com dados Mockados.
         List<Funcionario> funcionarios = new ArrayList<>();
         funcionarios.add(new Funcionario("Maria", LocalDate.of(2000, 10, 18), new BigDecimal("2009.44"), "Operador"));
         funcionarios.add(new Funcionario("João", LocalDate.of(1990, 5, 12), new BigDecimal("2284.38"), "Operador"));
@@ -45,7 +46,8 @@ public class Main {
 
         f1.exibirInfo();
 
-        // 3.1 Inserir todos os funcionários, na mesma ordem e informações da tabela acima.
+        // 3.1 Inserir todos os funcionários, na mesma ordem e informações da tabela
+        // acima.
         FakeJira f31 = new FakeJira(31);
         f31.exibirDescricao();
 
@@ -53,10 +55,19 @@ public class Main {
             f.exibirInfo();
         }
 
-        // 3.2 Remover o funcionário “João” da lista.
-        // IA do Itau demitiu o João por click rate baixo :( removido da lista.
+        /*
+         * 3.2 Remover o funcionário “João” da lista.
+         * IA do Itau demitiu o João por click rate baixo :( removido da lista.
+         * 3.3 – Imprimir todos os funcionários com todas suas informações, sendo que:
+         * • informação de data deve ser exibido no formato dd/mm/aaaa;
+         * • informação de valor numérico deve ser exibida no formatado com separador de
+         * milhar como ponto e decimal como vírgula.
+         */
+
         FakeJira f32 = new FakeJira(32);
         f32.exibirDescricao();
+        FakeJira f33 = new FakeJira(33);
+        f33.exibirDescricao();
 
         funcionarios.removeIf(f -> f.getNome().equals("João"));
 
@@ -71,7 +82,19 @@ public class Main {
          * exibisse todos os testes no console de uma vez facilitando o Code Review.
          */
         for (Funcionario f : funcionarios) {
-        f.exibirInfo();
+            f.exibirInfo();
+        }
+
+        // 3.4 – Os funcionários receberam 10% de aumento de salário, atualizar a lista
+        // de funcionários com novo valor.
+        FakeJira f34 = new FakeJira(34);
+        f34.exibirDescricao();
+
+        for (Funcionario f : funcionarios) {
+            // Aumenta 10% no salário
+            f.setSalario(f.getSalario().multiply(new BigDecimal("1.1")));
+            // Exibe as informações já com o salário atualizado
+            f.exibirInfo();
         }
     }
 }
