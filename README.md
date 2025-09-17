@@ -1,11 +1,13 @@
 # Projeto Pessoa em Java
 
-Este projeto é um exemplo simples em **Java** que define uma classe `Pessoa` com os atributos:
+Este projeto é um exemplo simples em **Java** a indentação do código foi feita no VS Code → com a extensão "Language Support for Java(TM) by Red Hat" + "Prettier";
+Até o momento o projeto define uma classe `Pessoa` com os atributos:
 
 - `nome` (String)  
 - `dataNascimento` (LocalDate)  
 
 E uma classe `Main` que instancia objetos da classe `Pessoa` e exibe suas informações.
+
 
 ---
 
