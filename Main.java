@@ -124,7 +124,11 @@ public class Main {
         //3.9 Imprimir o funcionário com a maior idade, exibir os atributos: nome e idade.
         FakeJira f39 = new FakeJira(39);
         f39.exibirDescricao();
-
         Funcionario.funcionarioMaisVelho(funcionarios);
+
+        //3.10 Imprimir a lista de funcionários por ordem alfabética.
+        FakeJira f310 = new FakeJira(310);
+        f310.exibirDescricao();
+        Funcionario.imprimirPorOrdemAlfabetica(funcionarios);
     }
 }

@@ -84,4 +84,17 @@ public class Funcionario extends Pessoa {
         System.out.println("Nome: " + maisVelho.getNome());
         System.out.println("Idade: " + idade + " anos\n");
     }
+
+    // Método para imprimir funcionários em ordem alfabética pelo nome
+    public static void imprimirPorOrdemAlfabetica(List<Funcionario> lista) {
+        // Cria uma cópia da lista para não alterar a original
+        List<Funcionario> listaOrdenada = lista.stream()
+                .sorted(Comparator.comparing(Funcionario::getNome))
+                .toList();
+
+        System.out.println("Lista de funcionários em ordem alfabética:\n");
+        for (Funcionario f : listaOrdenada) {
+            f.exibirInfo();
+        }
+    }
 }
