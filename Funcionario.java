@@ -1,5 +1,6 @@
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Funcionario extends Pessoa {
     private BigDecimal salario;
@@ -28,9 +29,13 @@ public class Funcionario extends Pessoa {
     }
 
     public void exibirInfo() {
+        // Formata a data no padrão dd/MM/yyyy
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String dataFormatada = getDataNascimento().format(formatter);
+
         System.out.println("Nome: " + getNome());
-        System.out.println("Data de Nascimento: " + getDataNascimento());
-        System.out.println("Função: " + funcao);
-        System.out.println("Salário R$: " + salario + "\n");
+        System.out.println("Data de Nascimento: " + dataFormatada);
+        System.out.println("Salário R$: " + salario);
+        System.out.println("Função: " + funcao + "\n");
     }
 }
