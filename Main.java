@@ -130,5 +130,15 @@ public class Main {
         FakeJira f310 = new FakeJira(310);
         f310.exibirDescricao();
         Funcionario.imprimirPorOrdemAlfabetica(funcionarios);
+
+        //3.11 Imprimir o total dos salários dos funcionários.
+        FakeJira f311 = new FakeJira(311);
+        f311.exibirDescricao();
+        Funcionario.imprimirTotalSalarios(funcionarios);
+
+        //3.12 Imprimir quantos salários mínimos ganha cada funcionário, considerando que o salário mínimo é R$1212.00.
+        FakeJira f312 = new FakeJira(312);
+        f312.exibirDescricao();
+        Funcionario.imprimirSalariosMinimos(funcionarios);
     }
 }

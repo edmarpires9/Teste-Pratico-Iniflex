@@ -52,7 +52,7 @@ public class FakeJira {
                 System.out.println("PDB: 3.10 : Imprimir a lista de funcionários por ordem alfabética.");
                 break;
             case 311:
-                System.out.println("PDB: 3.11 : Imprimir o total dos salários dos funcionários.");
+                System.out.println("PDB: 3.11 : Imprimir o total dos salários dos funcionários. OBS como não foi especificado não inclui o João e considera o 10% de aumento");
                 break;
             case 312:
                 System.out.println(

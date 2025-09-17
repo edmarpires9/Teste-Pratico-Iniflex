@@ -97,4 +97,36 @@ public class Funcionario extends Pessoa {
             f.exibirInfo();
         }
     }
+
+    // Método para imprimir o total dos salários
+    public static void imprimirTotalSalarios(List<Funcionario> lista) {
+        BigDecimal total = BigDecimal.ZERO;
+
+        for (Funcionario f : lista) {
+            total = total.add(f.getSalario());
+        }
+
+        // Formata o valor total
+        NumberFormat nf = NumberFormat.getNumberInstance(new Locale("pt", "BR"));
+        nf.setMinimumFractionDigits(2);
+        nf.setMaximumFractionDigits(2);
+        String totalFormatado = nf.format(total);
+
+        System.out.println("Total dos salários dos funcionários: R$ " + totalFormatado + "\n");
+    }
+
+        // Método para imprimir quantos salários mínimos ganha cada funcionário
+    public static void imprimirSalariosMinimos(List<Funcionario> lista) {
+        BigDecimal salarioMinimo = new BigDecimal("1212.00");
+        NumberFormat nf = NumberFormat.getNumberInstance(new Locale("pt", "BR"));
+        nf.setMinimumFractionDigits(2);
+        nf.setMaximumFractionDigits(2);
+
+        System.out.println("Quantos salários mínimos ganha cada funcionário:\n");
+        for (Funcionario f : lista) {
+            BigDecimal quantidade = f.getSalario().divide(salarioMinimo, 2, BigDecimal.ROUND_HALF_UP);
+            System.out.println(f.getNome() + ": " + nf.format(quantidade) + " salários mínimos");
+        }
+        System.out.println();
+    }
 }
